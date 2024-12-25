@@ -21,6 +21,7 @@
 #include <cstring>
 #include <stdexcept>
 
+#include <boost/endian/conversion.hpp>
 #include <boost/endian/buffers.hpp>
 
 namespace {

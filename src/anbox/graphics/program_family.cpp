@@ -16,6 +16,10 @@
  * Authored by: Daniel van Vugt <daniel.van.vugt@canonical.com>
  */
 
+#include <cstddef>
+#include <string>
+#include <stdexcept>
+
 #include "anbox/graphics/program_family.h"
 
 #include "anbox/graphics/emugl/DispatchTables.h"

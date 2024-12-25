@@ -15,6 +15,8 @@
  *
  */
 
+#include <google/protobuf/io/zero_copy_stream_impl.h>
+
 #include "anbox/container/management_api_skeleton.h"
 #include "anbox/container/configuration.h"
 #include "anbox/container/container.h"

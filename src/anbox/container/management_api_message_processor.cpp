@@ -15,6 +15,8 @@
  *
  */
 
+#include <google/protobuf/io/zero_copy_stream_impl.h>
+
 #include "anbox/container/management_api_message_processor.h"
 #include "anbox/container/management_api_skeleton.h"
 #include "anbox/rpc/template_message_processor.h"

@@ -16,6 +16,9 @@
  * Authored by: Alan Griffiths <alan@octopull.co.uk>
  */
 
+#include <google/protobuf/stubs/common.h>
+#include <google/protobuf/service.h>
+
 #include "anbox/rpc/pending_call_cache.h"
 
 #include "anbox_rpc.pb.h"

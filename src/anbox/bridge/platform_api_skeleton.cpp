@@ -15,6 +15,8 @@
  *
  */
 
+#include <google/protobuf/io/zero_copy_stream_impl.h>
+
 #include "anbox/bridge/platform_api_skeleton.h"
 #include "anbox/application/database.h"
 #include "anbox/platform/base_platform.h"

@@ -15,6 +15,8 @@
  *
  */
 
+#include <google/protobuf/io/zero_copy_stream_impl.h>
+
 #include "anbox/rpc/message_processor.h"
 #include "anbox/common/variable_length_array.h"
 #include "anbox/rpc/constants.h"

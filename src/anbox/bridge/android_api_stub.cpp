@@ -15,6 +15,8 @@
  *
  */
 
+#include <google/protobuf/io/zero_copy_stream_impl.h>
+
 #include "anbox/bridge/android_api_stub.h"
 #include "anbox/system_configuration.h"
 #include "anbox/logger.h"

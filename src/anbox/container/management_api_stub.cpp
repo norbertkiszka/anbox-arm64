@@ -15,6 +15,8 @@
  *
  */
 
+#include <google/protobuf/io/zero_copy_stream_impl.h>
+
 #include "anbox/container/management_api_stub.h"
 #include "anbox/logger.h"
 #include "anbox/rpc/channel.h"
