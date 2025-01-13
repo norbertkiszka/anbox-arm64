@@ -4,7 +4,7 @@
 # Anbox for ARM64
 
 Anbox is a container-based approach to boot a full Android system on a
-regular GNU/Linux system like Ubuntu. In other words: Anbox will let
+regular GNU/Linux system like Ubuntu or Debian. In other words: Anbox will let
 you run Android on your Linux system without the slowness of
 virtualization.
 
@@ -45,8 +45,9 @@ See our [installation instructions](docs/install.md) for details.
 
 At the moment we officially support the following Linux distributions:
 
- * Ubuntu 16.04 (xenial)
- * Ubuntu 18.04 (bionic)
+ * <del>Ubuntu 16.04 (xenial)</del>
+ * <del>Ubuntu 18.04 (bionic)</del>
+ * Debian 12
 
 However all other distributions supporting snap packages should work as
 well as long as they provide the mandatory kernel modules (see kernel/).
@@ -81,42 +82,23 @@ system:
  * libprotobuf
  * protobuf-compiler
  * lxc (>= 3.0)
+ * python2
+ * binutils
+ * binutils-dev
+ * libgmock-dev
+ * squashfs-tools
 
-On an Ubuntu system you can install all build dependencies with the following
-command:
-
-```
-$ sudo apt install build-essential cmake cmake-data debhelper dbus google-mock \
-    libboost-dev libboost-filesystem-dev libboost-log-dev libboost-iostreams-dev \
-    libboost-program-options-dev libboost-system-dev libboost-test-dev \
-    libboost-thread-dev libcap-dev libsystemd-dev libegl1-mesa-dev \
-    libgles2-mesa-dev libglm-dev libgtest-dev liblxc1 \
-    libproperties-cpp-dev libprotobuf-dev libsdl2-dev libsdl2-image-dev lxc-dev \
-    pkg-config protobuf-compiler 
-```
-We recommend Ubuntu 18.04 (bionic) with **GCC 7.x** as your build environment.
-
+On an Ubuntu and Debian system all requirements should be installed automatically after executing script compile_and_install.sh
 
 ### Build
 
-Afterwards you can build Anbox with
+Afterwards you can build and install Anbox with
 
 ```
-$ git clone https://github.com/anbox/anbox.git
-$ cd anbox
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make
+$ git clone --recurse-submodules https://github.com/norbertkiszka/anbox-arm64.git
+$ cd anbox-arm64
+$ ./compile_and_install.sh
 ```
-
-A simple
-
-```
-$ sudo make install
-```
-
-will install the necessary bits into your system.
 
 If you want to build the anbox snap instead you can do this with the following
 steps:

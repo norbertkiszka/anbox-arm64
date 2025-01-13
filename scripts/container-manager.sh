@@ -7,10 +7,10 @@ set -x
 # rootfs.
 
 DATA_PATH=$SNAP_COMMON/
-ANDROID_IMG=$SNAP/android.img
+ANDROID_IMG=/var/lib/anbox/android.img
 
 if [ "$(id -u)" != 0 ]; then
-	echo "ERROR: You need to run the container manager as root"
+	echo "ERROR: You need to run the $0 as root"
 	exit 1
 fi
 
@@ -19,13 +19,16 @@ if [ ! -e "$ANDROID_IMG" ]; then
 	exit 1
 fi
 
-if [ "$SNAP_ARCH" = "arm64" ]; then
-	ARCH="aarch64-linux-gnu"
-elif [ "$SNAP_ARCH" = "armhf" ]; then
-	ARCH="arm-linux-gnueabihf"
-else
-	ARCH="aarch64-linux-gnu"
-fi
+# if [ "$SNAP_ARCH" = "arm64" ]; then
+# 	ARCH="aarch64-linux-gnu"
+# elif [ "$SNAP_ARCH" = "armhf" ]; then
+# 	ARCH="arm-linux-gnueabihf"
+# else
+# 	ARCH="aarch64-linux-gnu"
+# fi
+
+# TODO: use uname -m to select it
+ARCH="aarch64-linux-gnu"
 
 # Re-exec outside of apparmor confinement
 if [ -d /sys/kernel/security/apparmor ] && [ "$(cat /proc/self/attr/current)" != "unconfined" ]; then

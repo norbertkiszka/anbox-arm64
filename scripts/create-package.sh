@@ -32,4 +32,7 @@ sudo chmod +x $rootfs/anbox-init.sh
 sudo mksquashfs $rootfs android.img -comp xz -no-xattrs
 sudo chown $USER:$USER android.img
 
+sudo mkdir -p /var/lib/anbox
+sudo mv android.img /var/lib/anbox/
+
 sudo rm -rf $workdir
